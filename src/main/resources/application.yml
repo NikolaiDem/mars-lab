@@ -1,0 +1,38 @@
+server:
+  port: 8290
+  servlet:
+    context-path: /
+  tomcat:
+    threads:
+      max: 200
+logging:
+  level:
+    root: DEBUG
+spring:
+  main:
+    banner-mode: off
+  output:
+    ansi:
+      enabled: always
+  liquibase:
+    enabled: true
+    change-log: classpath:liquibase/master.xml
+  datasource:
+    url: jdbc:postgresql://localhost:5432/mars-db
+    username: root
+    password: root_pass
+    driver-class-name: org.postgresql.Driver
+    sql-script-encoding: UTF-8
+    connectionProperties: useUnicode=true;characterEncoding=utf-8;
+    jpa:
+      properties:
+        hibernate:
+          generate_statistics: true
+    minio:
+      url: http://localhost:9000
+      bucket: bucket1
+      username: user1
+      password: password1
+token:
+  signing:
+    key: ${JWT_SECRET:413F4428472B4B6250655368566D5970337336763979244226452948404D6351}
