@@ -22,7 +22,7 @@ import ru.mars.enums.State;
 
 @Repository
 @AllArgsConstructor
-public class CriteriaReportSearchRepository implements ReportSearchRepository {
+public class ReportSearchRepositoryImpl implements ReportSearchRepository {
 
     private EntityManager em;
 
@@ -70,3 +70,4 @@ public class CriteriaReportSearchRepository implements ReportSearchRepository {
         };
     }
 }
+
